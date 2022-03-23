@@ -61,7 +61,7 @@ const float MIN_SCALE = 1.0f;
         _minScale = MIN_SCALE;
         _maxScale = MAX_SCALE;
         _horizontal = NO;
-        _enablePaging = NO;
+        _enablePaging = YES;
         _enableRTL = NO;
         _enableAnnotationRendering = YES;
         _fitPolicy = 2;
@@ -75,7 +75,8 @@ const float MIN_SCALE = 1.0f;
         _pdfView.displaysPageBreaks = YES;
         _pdfView.displayBox = kPDFDisplayBoxCropBox;
         _pdfView.backgroundColor = [UIColor clearColor];
-
+        [_pdfView usePageViewController:YES withViewOptions:@{UIPageViewControllerOptionSpineLocationKey:@(UIPageViewControllerSpineLocationMin),UIPageViewControllerOptionInterPageSpacingKey:@(_spacing)}];
+        
         _fixScaleFactor = -1.0f;
         _initialed = NO;
         _changedProps = NULL;
